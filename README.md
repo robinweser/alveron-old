@@ -14,8 +14,7 @@ In fact you might now ask why not just use React's very own `setState` API. Whil
 > Alveron requires `react-redux` to be installed in your project.
 
 ```sh
-yarn add alveron
-yarn add react-redux
+yarn add alveron react-redux
 ```
 
 ## The Gist
