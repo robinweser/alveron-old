@@ -5,7 +5,7 @@
 Alveron is a highly opinionated state architecture for React using Redux.<br>
 It is inspired by The Elm Architecture and aims to simplify component-based state management.
 
-<img alt="TravisCI" src="https://travis-ci.org/rofrischmann/alveron.svg?branch=master"> <a href="https://codeclimate.com/github/rofrischmann/alveron/coverage"><img alt="Test Coverage" src="https://codeclimate.com/github/rofrischmann/alveron/badges/coverage.svg"></a> <img alt="npm downloads" src="https://img.shields.io/npm/dm/alveron.svg"><img alt="npm version" src="https://badge.fury.io/js/alveron.svg">
+<img alt="TravisCI" src="https://travis-ci.org/rofrischmann/alveron.svg?branch=master"> <a href="https://codeclimate.com/github/rofrischmann/alveron/coverage"><img alt="Test Coverage" src="https://codeclimate.com/github/rofrischmann/alveron/badges/coverage.svg"></a> <img alt="npm downloads" src="https://img.shields.io/npm/dm/alveron.svg"> <img alt="npm version" src="https://badge.fury.io/js/alveron.svg">
 
 ## Why?
 In fact you might now ask why not just use React's very own `setState` API. While `setState` is limited to the component scope, we can use alveron to manage global state auto-scoped to each component. Using this we can not just create one-to-one, but also many-to-one component:state relations. Also we are free to access each component's state from within another component if required.
@@ -54,7 +54,11 @@ const Counter = createContainer({
 
 ## Documentation
 
-> Coming soon
+* [Getting Started](docs/GettingStarted.md)
+* [Usage Guide](docs/UsageGuide.md)
+* [API Reference](docs/api/)
+  * [`createReducer([defaultReducer])`](docs/api/createReducer.md)
+  * [`createContainer(interface)`](docs/api/createContainer.md)
 
 ## Examples
 **[Simple Example](examples/simple/vanilla)**<br>

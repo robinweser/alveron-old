@@ -1,7 +1,7 @@
 {
   "name": "alveron",
   "version": "1.0.0",
-  "description": "Opinionated Redux Component Architecture for React",
+  "description": "Opinionated Elm-inspired Redux Component Architecture for React",
   "main": "lib/index.js",
   "files": [
     "LICENSE",
