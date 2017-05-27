@@ -9,4 +9,4 @@ notifications:
   email: false
 addons:
   code_climate:
-    repo_token: bab898d784279e89337e4e664567b7c515164911bcef32680e446ff206b1d9b0
+    repo_token: 58c889c91fa0b1e742126e51a38b4c39457c43c3f3288d305326141cd4addc71
