@@ -12,8 +12,8 @@
   "repository": "https://github.com/rofrischmann/alveron",
   "scripts": {
     "babel": "babel -d lib modules",
-    "check": "npm run format && npm run lint && npm run test:coverage",
-    "flow": "flow",
+    "check": "npm run format && npm run lint && npm run flow && npm run test:coverage",
+    "flow": "flow modules",
     "format": "prettier --single-quote --no-semi --jsx-bracket-same-line --write \"modules/**/*.js\"",
     "lint": "eslint modules",
     "release": "npm run check && npm run babel && npm publish",
