@@ -28,6 +28,7 @@
     "no-mixed-operators": [ 1 ],
     "no-lonely-if": [ 1 ],
     "no-bitwise": [ 0 ],
-    "arrow-parens": [ 0 ]
+    "arrow-parens": [ 0 ],
+    "no-shadow": [ 0 ]
   }
 }

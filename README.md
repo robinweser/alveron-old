@@ -56,9 +56,7 @@ const Counter = createContainer({
 
 * [Getting Started](docs/GettingStarted.md)
 * [Usage Guide](docs/UsageGuide.md)
-* [API Reference](docs/api/)
-  * [`createReducer([defaultReducer])`](docs/api/createReducer.md)
-  * [`createContainer(interface)`](docs/api/createContainer.md)
+* [API Reference](docs/API.md)
 
 ## Examples
 **[Simple Example](examples/simple/vanilla)**<br>

@@ -1,11 +1,33 @@
 /* @flow */
 import { createAction } from 'redux-actions'
 
-export default function createActions(update, payloadCreator, id) {
-  return Object.keys(update).reduce((actions, name) => {
-    const payload = payloadCreator[name] ? payloadCreator[name] : p => p
+import objectReduce from './objectReduce'
+import createActionType from './createActionType'
 
-    actions[name] = createAction(`${id}:${name}`, payload, input => input)
-    return actions
-  }, {})
+import type { FunctionMap } from '../../types/FunctionMap'
+
+const defaultPayloadCreator = payload => payload
+const defaultMetaCreator = meta => meta
+
+export default function createActions(
+  update: FunctionMap,
+  payloadCreator: FunctionMap,
+  scope: string
+): FunctionMap {
+  return objectReduce(
+    update,
+    (actions, name) => {
+      const payload = payloadCreator[name]
+        ? payloadCreator[name]
+        : defaultPayloadCreator
+
+      actions[name] = createAction(
+        createActionType(scope, name),
+        payload,
+        defaultMetaCreator
+      )
+      return actions
+    },
+    {}
+  )
 }

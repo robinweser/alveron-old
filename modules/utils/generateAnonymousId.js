@@ -2,5 +2,5 @@
 let count = 0
 
 export default function generateAnonymousId(): string {
-  return `__alveron${++count}`
+  return `__alveron_action_${++count}`
 }

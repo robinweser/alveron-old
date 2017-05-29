@@ -1,16 +1,34 @@
 /* @flow */
-export default function createReducer(update, id, model) {
+import createActionType from './createActionType'
+import objectReduce from './objectReduce'
+
+import type { FunctionMap } from '../../types/FunctionMap'
+
+export default function createReducer(
+  update: FunctionMap,
+  scope: string,
+  model: any
+): Function {
+  const reducerMap = objectReduce(
+    update,
+    (reducerMap, name) => {
+      reducerMap[createActionType(scope, name)] = update[name]
+      return reducerMap
+    },
+    {}
+  )
+
   return function reducerFunction(state, action) {
-    if (!state.hasOwnProperty(id)) {
-      state[id] = model
+    // set the initial state
+    if (!state.hasOwnProperty(scope)) {
+      state[scope] = model
     }
 
-    for (const name in update) {
-      if (action.type === `${id}:${name}`) {
-        return {
-          ...state,
-          [id]: update[name](state[id], action)
-        }
+    const reducer = reducerMap[action.type]
+    if (reducer) {
+      return {
+        ...state,
+        [scope]: reducer(state[scope], action)
       }
     }
 
