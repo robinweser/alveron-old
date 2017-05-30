@@ -19,12 +19,12 @@ export default function createContainer({
   model = undefined,
   payload
 }: Interface) {
-  return (stateKey: string = generateAnonymousId()) => {
+  return (scope: string = generateAnonymousId()) => {
     const updateMap = createFunctionMap(update)
     const payloadCreator = createFunctionMap(payload)
-    const actions = createActions(updateMap, payloadCreator, stateKey)
+    const actions = createActions(updateMap, payloadCreator, scope)
 
-    const reduxReducer = createReducer(updateMap, stateKey, model)
+    const reduxReducer = createReducer(updateMap, scope, model)
     paraduxInstance.register(reduxReducer)
 
     const mapDispatchToProps = dispatch => createDispatchers(dispatch, actions)
@@ -32,11 +32,11 @@ export default function createContainer({
       // hacky way to initialize the reducer if it is added
       // after the redux store is created
       // we might find a better solution for this later
-      if (!state.hasOwnProperty(stateKey)) {
+      if (!state.hasOwnProperty(scope)) {
         reduxReducer(state, { type: '@@INIT' })
       }
 
-      return { state: state[stateKey], stateKey }
+      return { state: state[scope], scope }
     }
 
     return connect(mapStateToProps, mapDispatchToProps)(view)

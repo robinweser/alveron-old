@@ -1,7 +1,5 @@
 # alveron
 
-> WIP
-
 Alveron is a highly opinionated state architecture for React using Redux.<br>
 It is inspired by The Elm Architecture and aims to simplify component-based state management.
 
@@ -41,7 +39,7 @@ const view = ({ state, increase, decrease }) => (
 )
 
 // the single higher-order function that links
-// everything together
+// everything together and returns a React component
 const Counter = createContainer({
   view,
   update,
@@ -59,16 +57,11 @@ const Counter = createContainer({
 * [API Reference](docs/API.md)
 
 ## Examples
-**[Simple Example](examples/simple/vanilla)**<br>
-A simple example that includes 3 components:
-1. SingleCounter (many-to-one)
-2. ReusableCounter (one-to-one)
-3. GithubStars (async with payloadCreator)
 
-
-## Support
-We highly appreciate any contribution.<br>
-We also love to get feedback.
+* [Simple Counter](examples/simple)
+* [Scoped Counter](examples/scoped)
+* [Payload Counter](examples/payload)
+* [Async Payload](examples/async-paylod)
 
 ## License
 Alveron is licensed under the [MIT License](http://opensource.org/licenses/MIT).<br>

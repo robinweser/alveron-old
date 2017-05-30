@@ -11,18 +11,19 @@ const model = {
 const update = {
   fetchStars: (state, action) => {
     // if an error occurs or the repository does not exist
-    if (action.error || !action.payload) {
+    if (action.error || !action.payload) {
       return state
     }
 
     return {
-    ...state,
-    stars: {
-      ...state.stars,
-      // we can access the input via action.meta
-      [action.meta.user + '/' + action.meta.repo]: action.payload
+      ...state,
+      stars: {
+        ...state.stars,
+        // we can access the input via action.meta
+        [action.meta.user + '/' + action.meta.repo]: action.payload
+      }
     }
-  }},
+  },
   setRepo: (state, action) => ({ ...state, repo: action.payload }),
   setUser: (state, action) => ({ ...state, user: action.payload })
 }
@@ -54,7 +55,9 @@ const view = ({
 }
 
 const StarList = ({ stars }) => (
-  <ul>{Object.keys(stars).map(repo => <li key={repo}>{repo}: {stars[repo]}</li>)}</ul>
+  <ul>
+    {Object.keys(stars).map(repo => <li key={repo}>{repo}: {stars[repo]}</li>)}
+  </ul>
 )
 
 export default createContainer({
