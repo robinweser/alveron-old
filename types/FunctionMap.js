@@ -1,2 +1,2 @@
 /* @flow */
-export type FunctionMap = { [key: string]: Function } | Object
+export type FunctionMap = { [key: string]: Function }

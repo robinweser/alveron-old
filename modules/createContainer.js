@@ -1,5 +1,7 @@
 /* @flow */
+/* eslint-disable import/no-unresolved, import/extensions */
 import { connect } from 'react-redux'
+/* eslint-enable */
 
 import generateAnonymousId from './utils/generateAnonymousId'
 import createDispatchers from './utils/createDispatchers'
@@ -15,7 +17,7 @@ export default function createContainer({
   view,
   update,
   model = undefined,
-  payload = {}
+  payload
 }: Interface) {
   return (stateKey: string = generateAnonymousId()) => {
     const updateMap = createFunctionMap(update)
