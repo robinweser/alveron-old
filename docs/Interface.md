@@ -1,3 +1,3 @@
-# Usage Guide
+# Interface
 
 > Coming soon.
