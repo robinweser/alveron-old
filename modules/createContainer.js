@@ -16,12 +16,14 @@ import type { Interface } from '../types/Interface'
 export default function createContainer({
   view,
   update,
-  model = undefined,
-  payload
+  model,
+  payload,
+  mapState
 }: Interface) {
   return (scope: string = generateAnonymousId()) => {
     const updateMap = createFunctionMap(update)
     const payloadCreator = createFunctionMap(payload)
+
     const actions = createActions(updateMap, payloadCreator, scope)
 
     const reduxReducer = createReducer(updateMap, scope, model)
@@ -36,7 +38,14 @@ export default function createContainer({
         reduxReducer(state, { type: '@@INIT' })
       }
 
-      return { state: state[scope], scope }
+      const scopedState = state[scope]
+
+      if (mapState) {
+        const customState = mapState(scopedState, state)
+        return { ...customState, scope }
+      }
+
+      return { state: scopedState, scope }
     }
 
     return connect(mapStateToProps, mapDispatchToProps)(view)

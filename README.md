@@ -1,7 +1,7 @@
 # alveron
 
 Alveron is a highly opinionated state architecture for React using Redux.<br>
-It is inspired by The Elm Architecture and aims to simplify component-based state management.
+It is heavily inspired by The Elm Architecture and aims to simplify component-based state management.
 
 <img alt="TravisCI" src="https://travis-ci.org/rofrischmann/alveron.svg?branch=master"> <a href="https://codeclimate.com/github/rofrischmann/alveron/coverage"><img alt="Test Coverage" src="https://codeclimate.com/github/rofrischmann/alveron/badges/coverage.svg"></a> <img alt="npm downloads" src="https://img.shields.io/npm/dm/alveron.svg"> <img alt="npm version" src="https://badge.fury.io/js/alveron.svg">
 
@@ -14,6 +14,13 @@ In fact you might now ask why not just use React's very own `setState` API. Whil
 ```sh
 yarn add alveron react-redux
 ```
+
+## Benefits
+* locally-scoped state
+* plays well with third-party reducer
+* single file for markup & application state
+* simple & compact interface
+
 
 ## The Gist
 ```javascript

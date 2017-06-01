@@ -25,10 +25,11 @@ export default function createReducer(
     }
 
     const reducer = reducerMap[action.type]
+
     if (reducer) {
       return {
         ...state,
-        [scope]: reducer(state[scope], action)
+        [scope]: reducer(state[scope], action, state)
       }
     }
 

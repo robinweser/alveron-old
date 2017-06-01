@@ -10,7 +10,8 @@ Creates a fully integrated component factory injecting both the locally scoped s
 * **model** (*any*):<br>The model describes the initial state.
 * **update** (*Function|Object*):<br>Either a single update reducer with the signature *(previousState, action) => state* or an object with (multiple) named update reducers.
 * **view** (*ReactComponent*)<br>The React component which is rendered with the data. It gets the (scoped) state, the scope key and all action dispatcher passed via props.
-* **payload?** (*Function|Object*)<br>Either a single payload creator function or an object with named (names must match the reducer names from update) payload creator functions. It can be used to transform the action dispatcher input or to resolve async promises such as API requests.
+* **payload?** (*Function|Object*)<br>Either a single payload creator function or an object with named (names must match the reducer names from update) payload creator functions. It can be used to transform the action dispatcher input or to resolve async promises such as API requests. It's signature must me *payload => payload*
+* **mapState?** (*Function*)<br>An optional function to replace the default `mapStateToProps` which is passed to react-redux's `connect`. It's signature is *(scopedState, state) => Object* where *scopedState* is the locally scoped state.
 
 > Note: **model**, **update** and **view** are mandatory.
 
