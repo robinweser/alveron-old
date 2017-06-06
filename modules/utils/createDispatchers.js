@@ -9,8 +9,8 @@ export default function createDispatchers(
 ): FunctionMap {
   return objectReduce(
     actions,
-    (dispatcher, action) => {
-      dispatcher[action] = payload => dispatch(actions[action](payload))
+    (dispatcher, action, name) => {
+      dispatcher[name] = payload => dispatch(action(payload))
       return dispatcher
     },
     {}

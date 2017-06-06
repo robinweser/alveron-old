@@ -16,7 +16,7 @@ export default function createActions(
 ): FunctionMap {
   return objectReduce(
     update,
-    (actions, name) => {
+    (actions, action, name) => {
       const payload = payloadCreator[name]
         ? payloadCreator[name]
         : defaultPayloadCreator

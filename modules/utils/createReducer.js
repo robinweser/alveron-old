@@ -11,8 +11,8 @@ export default function createReducer(
 ): Function {
   const reducerMap = objectReduce(
     update,
-    (reducerMap, name) => {
-      reducerMap[createActionType(scope, name)] = update[name]
+    (reducerMap, action, name) => {
+      reducerMap[createActionType(scope, name)] = action
       return reducerMap
     },
     {}
