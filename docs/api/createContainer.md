@@ -2,11 +2,9 @@
 
 Creates a fully integrated component factory injecting both the locally scoped state and all action dispatchers directly into each component's props.
 
-## Arguments
-1. `interface` (*Object*): The interface describes all required parts of the component architecture.
+## [Interface](../Interface.md)
+The interface describes all required parts of the component architecture.
 
----
-#### Interface
 * **model** (*any*):<br>The model describes the initial state.
 * **update** (*Function|Object*):<br>Either a single update reducer with the signature *(previousState, action) => state* or an object with (multiple) named update reducers.
 * **view** (*ReactComponent*)<br>The React component which is rendered with the data. It gets the (scoped) state, the scope key and all action dispatcher passed via props.
