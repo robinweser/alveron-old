@@ -3,7 +3,7 @@
 import { connect } from 'react-redux'
 /* eslint-enable */
 
-import generateAnonymousId from './utils/generateAnonymousId'
+import idGenerator from './utils/idGenerator'
 import createDispatchers from './utils/createDispatchers'
 import createActions from './utils/createActions'
 import createReducer from './utils/createReducer'
@@ -12,6 +12,8 @@ import createFunctionMap from './utils/createFunctionMap'
 import paraduxInstance from './utils/paraduxInstance'
 
 import type { Interface } from '../types/Interface'
+
+const generateAnonymousId = idGenerator()
 
 export default function createContainer({
   view,
@@ -51,5 +53,3 @@ export default function createContainer({
     return connect(mapStateToProps, mapDispatchToProps)(view)
   }
 }
-/*
-*/

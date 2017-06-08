@@ -1,7 +1,10 @@
 # Summary
 
 * [Read Me](README.md)
-* [1. Getting Started](docs/GettingStarted.md)
+* [1. Introduction](docs/Introduction.md)
+  * [1.1. Motivation](docs/introduction/Motivation.md)
+  * [1.2. Getting Started](docs/introduction/GettingStarted.md)
+  * [1.3. Examples](docs/introduction/Examples.md)
 * [2. Interface](docs/Interface.md)
   * [2.1. Model](docs/interface/Model.md)
   * [2.2. Update](docs/interface/Update.md)
