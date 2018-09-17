@@ -1,3 +1,5 @@
+## Depreacted! This is the old alveron package which has been deprecated in favor of a newer version without Redux. The new version was once called react-woodworm.
+
 # alveron
 
 Alveron is a highly opinionated state architecture for React using Redux.<br>
