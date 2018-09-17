@@ -1,4 +1,4 @@
-## Depreacted! This is the old alveron package which has been deprecated in favor of a newer version without Redux. The new version was once called react-woodworm.
+## Depreacted! This is the old alveron package which has been deprecated in favor of a newer version without Redux. Check out the new [alveron](https://github.com/rofrischmann/alveron) package which was once called react-woodworm.
 
 # alveron
 
